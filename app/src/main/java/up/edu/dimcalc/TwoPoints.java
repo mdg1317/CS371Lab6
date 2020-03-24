@@ -31,8 +31,10 @@ public class TwoPoints {
 
     /** assign a random value to a point */
     public void randomValue(int index) {
-        int x = rand.nextInt(20) - 10;
-        int y = rand.nextInt(20) - 10;
+        //changed the bounds of the random number to only positive, since negative numbers
+        //cannot be typed in by the user
+        int x = rand.nextInt(20);
+        int y = rand.nextInt(20);
         setPoint(index, x, y);
     }
 
@@ -60,14 +62,19 @@ public class TwoPoints {
      * @return the slope or 0 if the points are equal */
     public double slope() {
         double result = 0.0;
-        if (points[0] == points[1]) {
+        if (points[0] == points[1]){
             return result;
         }
 
+        //added check for dividing by 0
         int xDiff = points[0].x - points[1].x;
+        if(xDiff == 0){
+            return result;
+        }
         int yDiff = points[0].y - points[1].y;
 
-        result = xDiff / yDiff;
+        //switched xDiff/yDiff to yDiff/xDiff
+        result = (double)yDiff / (double)xDiff;
         return result;
     }
 

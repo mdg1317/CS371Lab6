@@ -90,14 +90,11 @@ public class TwoPointsTest {
     @Test
     public void slope() {
         TwoPoints testPoints = new TwoPoints();
-        testPoints.randomValue(0);
-        testPoints.randomValue(1);
+        testPoints.setPoint(0, 2, 5);
+        testPoints.setPoint(1, 4, 11);
         Point p1 = testPoints.getPoint(0);
         Point p2 = testPoints.getPoint(1);
         double slope = testPoints.slope();
-        int xDiff = p2.x - p1.x;
-        int yDiff = p2.y - p1.y;
-        double slopeEx = yDiff / xDiff;
-        assertEquals(slopeEx, slope, 0.1);
+        assertEquals(3, slope, 0.1);
     }
 }

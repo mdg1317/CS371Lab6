@@ -14,7 +14,7 @@ public class TwoPointsTest {
         TwoPoints testPoints = new TwoPoints();
         Point p1 = testPoints.getPoint(0);
         Point p2 = testPoints.getPoint(1);
-        assertEquals(0, p1.x);
+        assertEquals(10, p1.x);
         assertEquals(0, p1.y);
         assertEquals(0, p2.x);
         assertEquals(0, p2.y);
